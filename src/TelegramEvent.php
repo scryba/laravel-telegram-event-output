@@ -1,6 +1,6 @@
 <?php
 
-namespace AlbertoBottarini\LaravelTelegramEventOutput;
+namespace michelmelo\LaravelTelegramEventOutput;
 
 use Illuminate\Console\Scheduling\Event;
 use Telegram;
