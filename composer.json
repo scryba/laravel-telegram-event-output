@@ -17,6 +17,6 @@
         "illuminate/support": "^5.1",
         "irazasyed/telegram-bot-sdk": "^2.0"
     },
-	"minimum-stability": "dev",
+	"minimum-stability": "1.0.0",
     "prefer-stable": true
 }
