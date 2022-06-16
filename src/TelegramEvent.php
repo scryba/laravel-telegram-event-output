@@ -36,7 +36,7 @@ class TelegramEvent extends Event
             return;
         }
 
-        return $this->then(function () use($chatId) {
+        return $this->then(function () use($chatId, $text) {
 
             $contents = "*" . "Scheduled Job Output For [{$this->command}]" . "*" . PHP_EOL;
             $contents .= "*" . $this->description . "*" . PHP_EOL;
@@ -47,7 +47,7 @@ class TelegramEvent extends Event
                 'text' => $contents,
                 'parse_mode' => 'Markdown'
             ]);
-            
+
         });
 
     }
