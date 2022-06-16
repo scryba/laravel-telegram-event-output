@@ -8,7 +8,7 @@ use Config;
 
 class TelegramEvent extends Event
 {
-
+    
     public function telegramOutputTo($chatId) {
 
         if (is_null($this->output) || $this->output == $this->getDefaultOutput()) {
