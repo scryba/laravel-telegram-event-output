@@ -5,6 +5,7 @@ namespace Laweitech\LaravelTelegramEventOutput;
 use Illuminate\Console\Scheduling\Event;
 use Telegram;
 use Config;
+use LogicException;
 
 class TelegramEvent extends Event
 {
@@ -12,7 +13,7 @@ class TelegramEvent extends Event
     public function telegramOutputTo($chatId) {
 
         if (is_null($this->output) || $this->output == $this->getDefaultOutput()) {
-            throw new LogicException('Must direct output to a file in order to telegram results.');
+            throw new LogicException('Must direct output to a file in order to get telegram results.');
         }
 
         return $this->then(function () use($chatId) {
