@@ -1,9 +1,9 @@
 <?php
 
-namespace michelmelo\LaravelTelegramEventOutput;
+namespace Laweitech\LaravelTelegramEventOutput;
 
 use Illuminate\Console\Scheduling\Schedule;
-use michelmelo\LaravelTelegramEventOutput\TelegramEvent;
+use Laweitech\LaravelTelegramEventOutput\TelegramEvent;
 
 class TelegramSchedule extends Schedule
 {

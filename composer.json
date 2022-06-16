@@ -1,16 +1,18 @@
 {
-    "name": "michelmelo/laravel-telegram-event-output",
+    "name": "laweitech/laravel-telegram-event-output",
     "description": "Laravel extension to send command output through telegram bots",
     "license": "none",
     "authors": [
         {
-            "name": "Michel Melo",
-            "email": "eu@michelmelo.pt"
+            "name": "Michael K. Laweh",
+            "email": "contact@michael.laweitech.com",
+            "homepage": "https://michael.laweitech.com/",
+            "role": "Developer"
         }
     ],
     "autoload": {
         "psr-4": {
-	        "michelmelo\\LaravelTelegramEventOutput\\": "src/"
+	        "Laweitech\\LaravelTelegramEventOutput\\": "src/"
         }
     },
     "require": {

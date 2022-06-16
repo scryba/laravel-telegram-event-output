@@ -1,6 +1,6 @@
 <?php
 
-namespace michelmelo\LaravelTelegramEventOutput;
+namespace Laweitech\LaravelTelegramEventOutput;
 
 trait TelegramConsoleKernel
 {

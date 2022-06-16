@@ -10,7 +10,7 @@ Laravel extension to send command output trough telegram bots
 Download using composer:
 
 ```shell
-composer require alberto-bottarini/laravel-telegram-event-output
+composer require scryba/laravel-telegram-event-output
 ```
     
 Edit `config/app.php` and add a new ServiceProvider:
@@ -35,7 +35,7 @@ Edit `config/telegram.php` or `.env` and add your Telegram API token id. This wi
 Improve your `App\Console\Kernel` with a new Trait:
 
 ```php
-use \AlbertoBottarini\LaravelTelegramEventOutput\TelegramConsoleKernel;
+use \Laweitech\LaravelTelegramEventOutput\TelegramConsoleKernel;
 ```
      
 ## usage
