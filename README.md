@@ -62,7 +62,7 @@ Edit `config/telegram.php` or `.env` and add your Telegram API token id. This wi
 Improve your `App\Console\Kernel` with a new Trait:
 
 ```php
-use \Laweitech\LaravelTelegramEventOutput\TelegramConsoleKernel;
+use Laweitech\LaravelTelegramEventOutput\TelegramConsoleKernel;
 ```
      
 ## usage
