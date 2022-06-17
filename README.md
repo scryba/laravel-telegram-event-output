@@ -12,6 +12,33 @@ Download using composer:
 ```shell
 composer require scryba/laravel-telegram-event-output
 ```
+
+OR
+
+Add the following to your composer.json file:
+
+```
+"require": {
+    "laweitech/laravel-telegram-event-output": "dev-master",
+},
+
+
+"repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:scryba/laravel-telegram-event-output.git"
+        }
+    ],
+
+
+```
+After run:
+
+```
+composer update
+
+```
+
     
 Edit `config/app.php` and add a new ServiceProvider:
 ```php
