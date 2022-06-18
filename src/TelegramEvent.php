@@ -26,6 +26,26 @@ class TelegramEvent extends Event
         }
     }
     
+    protected function removeSpacesAll($string)
+    {
+		//replace whitespaces with nothing
+        $cleaned_string = preg_replace('/\s+/', '', $string);
+
+        //Replace Multiple New Lines with nothing
+        $cleaned_string = preg_replace("/[\r\n]+/", "", $cleaned_string);
+
+        //Replace Multiple New Lines with nothing & Remove blank / empty lines
+        $cleaned_string = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "", $cleaned_string);
+
+        //Replace any horizontal whitespace character (since PHP 5.2.4) with nothing
+        $cleaned_string = preg_replace('/\h+/', '', $cleaned_string);
+
+        //don't know but also Replaces any horizontal whitespace character
+        $cleaned_string = preg_replace('/[ \t]+/', '', $cleaned_string);
+
+        return $cleaned_string;
+	}
+
     protected function correctFormattingForMarkdown($string) {
         //https://core.telegram.org/bots/api#markdownv2-style
         //https://stackoverflow.com/questions/61224362/telegram-bot-cant-find-end-of-the-entity-starting-at-truncated
@@ -35,6 +55,9 @@ class TelegramEvent extends Event
 
         $inputCharsToEscape = " '_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!' ";
         $inputEscapeSeq = "\\";
+
+        //remove spaces in $inputCharsToEscape or else space will be escaped
+        $inputCharsToEscape = $this->removeSpacesAll($inputCharsToEscape);
 
         $charsToEscape = preg_quote($inputCharsToEscape, '/');
         $regexSafeEscapeSeq = preg_quote($inputEscapeSeq, '/');
