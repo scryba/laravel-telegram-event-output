@@ -80,13 +80,20 @@ class TelegramEvent extends Event
 
         return $this->then(function () use($chatId, $text) {
 
+            //telegram's max lent is 4096
+            //https://dev-qa.com/320717/sending-large-messages-telegram-bot
+            // so we have to make sure the contents is less than that
+
             $contents = "*" . "Scheduled Job Output For [{$this->command}]" . "*" . PHP_EOL;
             $contents .= "*" . $this->description . "*" . PHP_EOL;
             $contents .= $text;
 
+            //split to meet max requirements
+            $contentsArray = str_split($contents, 4000);
+
             Telegram::sendMessage([
                 'chat_id' => $chatId,
-                'text' => $this->correctFormattingForMarkdown($contents),
+                'text' => $this->correctFormattingForMarkdown($contentsArray[0]),
                 'parse_mode' => 'MarkdownV2'
             ]);
 
